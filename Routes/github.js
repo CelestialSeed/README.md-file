@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const crypto = require('crypto');
-const { processGithubEvent } = require('../handlers/githubHandler');
+const { processGithubEvent } = require('../Handlers/githubHandler');
 
 // GitHub webhook secret for validating requests
 const GITHUB_WEBHOOK_SECRET = process.env.GITHUB_WEBHOOK_SECRET;
