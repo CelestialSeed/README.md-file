@@ -1,0 +1,26 @@
+# render.yaml
+services:
+  - type: web
+    name: immortal-stack-webhooks
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: MAKE_WEBHOOK_SECRET
+        sync: false
+      - key: GITHUB_WEBHOOK_SECRET
+        sync: false
+      - key: CLICKUP_API_TOKEN
+        sync: false
+      - key: CLICKUP_DEV_BACKLOG_LIST_ID
+        sync: false
+      - key: CLICKUP_CODE_REVIEWS_LIST_ID
+        sync: false
+      - key: CLICKUP_TODO_LIST_ID
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+    healthCheckPath: /health
+    autoDeploy: true
