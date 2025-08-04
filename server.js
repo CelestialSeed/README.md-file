@@ -31,8 +31,8 @@ app.get('/health', (req, res) => {
 });
 
 // Routes
-app.use('/api/webhooks', require('./routes/webhooks'));
-app.use('/api/github', require('./routes/github'));
+app.use('/api/webhooks', require('./Routes/Webhooks'));
+app.use('/api/github', require('./Routes/Github'));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
