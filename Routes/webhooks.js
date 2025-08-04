@@ -1,13 +1,13 @@
 // routes/webhooks.js
 const express = require('express');
 const router = express.Router();
-const { authenticateWebhook } = require('../middleware/auth');
+const { authenticateWebhook } = require('../Middleware/auth');
 
 // Import handlers
-const memoryHandler = require('../handlers/memoryHandler');
-const discordHandler = require('../handlers/discordHandler');
-const clickupHandler = require('../handlers/clickupHandler');
-const notionHandler = require('../handlers/notionHandler');
+const memoryHandler = require('../Handlers/memoryHandler');
+const discordHandler = require('../Handlers/discordHandler');
+const clickupHandler = require('../Handlers/clickupHandler');
+const notionHandler = require('../Handlers/notionHandler');
 
 // Main webhook endpoint
 router.post('/make/:scenarioId', authenticateWebhook, (req, res) => {
